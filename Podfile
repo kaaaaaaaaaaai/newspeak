@@ -9,6 +9,7 @@ target 'newspeak' do
  #pod 'SwiftyJSON', :git => 'https://github.com/SwiftyJSON/SwiftyJSON.git', branch:'swift3'
  pod 'Alamofire'#, :git => 'https://github.com/Alamofire/Alamofire.git', :branch => 'swift3'
  pod 'SDWebImage'
+ pod 'SwiftyJSON', :git => 'https://github.com/jollyjoester/SwiftyJSON.git', :branch => 'swift3-new'
 end
 
 post_install do |installer|

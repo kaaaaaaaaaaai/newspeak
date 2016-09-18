@@ -3,15 +3,28 @@ PODS:
   - SDWebImage (3.8.2):
     - SDWebImage/Core (= 3.8.2)
   - SDWebImage/Core (3.8.2)
+  - SwiftyJSON (2.3.2)
 
 DEPENDENCIES:
   - Alamofire
   - SDWebImage
+  - SwiftyJSON (from `https://github.com/jollyjoester/SwiftyJSON.git`, branch `swift3-new`)
+
+EXTERNAL SOURCES:
+  SwiftyJSON:
+    :branch: swift3-new
+    :git: https://github.com/jollyjoester/SwiftyJSON.git
+
+CHECKOUT OPTIONS:
+  SwiftyJSON:
+    :commit: 8ec7455c3b82e143793e5ce8b2152e53cfe411e5
+    :git: https://github.com/jollyjoester/SwiftyJSON.git
 
 SPEC CHECKSUMS:
   Alamofire: fef59f00388f267e52d9b432aa5d93dc97190f14
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
+  SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
 
-PODFILE CHECKSUM: ab5366de94f4c3e76a567ca55fd8972cbd4b6e57
+PODFILE CHECKSUM: 2f897b738b9b9e9054cb5449a5e0d13e21b1d114
 
 COCOAPODS: 1.1.0.rc.2
