@@ -18,6 +18,8 @@ class HomeTableViewController: UITableViewController {
         
         self.tableView.contentInset = UIEdgeInsetsMake(50, 0, (self.tabBarController?.tabBar.frame.height)!, 0)
         self.edgesForExtendedLayout = UIRectEdge.all
+        tableView.estimatedRowHeight = 100
+        tableView.rowHeight = UITableViewAutomaticDimension
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -28,9 +30,12 @@ class HomeTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell = tableView.dequeueReusableCell(withIdentifier: "HomeXib")! as! HomeTableViewCell
-        cell.titleText.text = "here"
-        let imageURL = NSURL(string: "https://i.gyazo.com/90f50b5c0d1aa8c0b3cd0170e72ec601.png")
+        cell.titleText.text = "GizMode"
+        let imageURL = NSURL(string: "http://tech.admax.ninja/favicon.ico")
         cell.favicon.sd_setImage(with: imageURL as URL!)
+        let imageURL2 = NSURL(string: "http://www.wallpaper-box.com/smartphone/wp-content/uploads/2012/03/960x854x22eb464660b542b7b6384733.png?c03b24")
+        cell.articleImage.sd_setImage(with: imageURL2 as URL!)
+        cell.descriptionLabel.text = "koko ga description ni naru yade"
         return cell
     }
     
@@ -44,6 +49,8 @@ class HomeTableViewCell:UITableViewCell{
     @IBOutlet weak var titleText: UILabel!
     
     @IBOutlet weak var favicon: UIImageView!
+    @IBOutlet weak var articleImage: UIImageView!
+    @IBOutlet weak var descriptionLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
