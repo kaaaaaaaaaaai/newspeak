@@ -37,7 +37,7 @@ class HomeTableViewController: UITableViewController {
         cell.favicon.sd_setImage(with: imageURL as URL!)
         let imageURL2 = NSURL(string: "http://www.wallpaper-box.com/smartphone/wp-content/uploads/2012/03/960x854x22eb464660b542b7b6384733.png")
         cell.articleImage.sd_setImage(with: imageURL2 as URL!)
-        cell.descriptionLabel.text = "koko ga description ni naru yade"
+        cell.descriptionLabel.text = "koko ga description ni naro ga description ni naro ga description ni naro ga description ni naro ga description ni naro ga description ni naro ga description ni naro ga description ni naro ga description ni naro ga description ni naro ga description ni naru yade"
         return cell
     }
     
