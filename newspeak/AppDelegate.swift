@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +17,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        Alamofire.request("http://ec2-54-199-249-169.ap-northeast-1.compute.amazonaws.com/users/login",method: .get, parameters:["token":"$2y$10$9VnOGvSwy7f5WEligojG2eXbfKyHj0.ybO7yKt9c3QS9vVXQ5xCq6"], encoding: JSONEncoding.default, headers: nil)
+            .responseJSON { (response:DataResponse<Any>) in
+                print(response.result.value)
+                print(response.result)
+                
+        }
         return true
     }
 
