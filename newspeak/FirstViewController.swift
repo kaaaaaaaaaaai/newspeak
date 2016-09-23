@@ -11,7 +11,8 @@ import SDWebImage
 import Alamofire
 
 class HomeTableViewController: UITableViewController {
-
+    
+    var cellHeight:CGFloat = 0.0
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -20,7 +21,7 @@ class HomeTableViewController: UITableViewController {
         self.tableView.contentInset = UIEdgeInsetsMake(50, 0, (self.tabBarController?.tabBar.frame.height)!, 0)
         self.tableView.separatorColor = UIColor.clear
         self.edgesForExtendedLayout = UIRectEdge.all
-        tableView.estimatedRowHeight = 120
+        tableView.estimatedRowHeight = 90
         tableView.rowHeight = UITableViewAutomaticDimension
         // Do any additional setup after loading the view, typically from a nib.
     }
@@ -37,27 +38,23 @@ class HomeTableViewController: UITableViewController {
         cell.favicon.sd_setImage(with: imageURL as URL!)
         let imageURL2 = NSURL(string: "http://www.wallpaper-box.com/smartphone/wp-content/uploads/2012/03/960x854x22eb464660b542b7b6384733.png")
         cell.articleImage.sd_setImage(with: imageURL2 as URL!)
-        cell.descriptionLabel.text = "k\nk\n yadek\n yadek\n yadek\n yadek\n yadek\n yade yade"
+        cell.descriptionLabel.text = "de \n omg orz \n f \n c"
+        cell.descriptionLabel.sizeToFit()
+        self.cellHeight = cell.descriptionLabel.frame.height
         return cell
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 30
     }
-/*
+    
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        var cell = tableView.dequeueReusableCell(withIdentifier: "HomeXib")! as! HomeTableViewCell
-        cell.descriptionLabel.text = "k\nk\n yadek\n yadek\n yadek\n yadek\n yadek\n yade yade"
-        cell.descriptionLabel.sizeToFit()
-        print(cell.descriptionLabel.frame.height)
-        if (Int(cell.descriptionLabel.frame.height) > 50){
-            return cell.descriptionLabel.frame.height
-            print("here")
-        }
-        print("are")
-        return 98
+        return 90
     }
- */
+    
+    override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return super.tableView(tableView, heightForRowAt: indexPath)
+    }
     
     private func MAX(arg1:CGFloat,arg2:CGFloat) -> CGFloat{
         if(Int(arg1) > Int(arg2)){
