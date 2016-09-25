@@ -39,17 +39,17 @@ class HomeTableViewController: UITableViewController {
         let imageURL2 = NSURL(string: "http://www.wallpaper-box.com/smartphone/wp-content/uploads/2012/03/960x854x22eb464660b542b7b6384733.png")
         cell.articleImage.sd_setImage(with: imageURL2 as URL!)
         cell.descriptionLabel.text = "de \n omg orz \n f \n c"
-        cell.descriptionLabel.sizeToFit()
-        self.cellHeight = cell.descriptionLabel.frame.height
+        //cell.descriptionLabel.sizeToFit()
+        //self.cellHeight = cell.descriptionLabel.frame.height
         return cell
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 30
+        return 50
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 90
+        return 100
     }
     
     override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
